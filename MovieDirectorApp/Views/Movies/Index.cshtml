@@ -1,0 +1,72 @@
+﻿
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+</script>
+<link href="~/Content/MovieStyleSheet.css" rel="stylesheet" />
+
+@model IEnumerable<MovieDirectorApp.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="bg">
+
+
+    <div class="jumbotron">
+        <div class="col-md-12">
+            <a class="btn btn-default" href=" @Url.Action("Create","Movies")">Create </a>
+        </div>
+    </div>
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="animated flipInX">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+
+                    <div class="caption">
+
+                         <p>
+                            <strong>  @Html.DisplayNameFor(model => model.Title)</strong>: @Html.DisplayFor(modelItem => item.Title)
+                        </p>
+                        
+                        <p>
+                            <strong> @Html.DisplayNameFor(model => model.RealeaseDate)</strong> : @Html.DisplayFor(modelItem => item.RealeaseDate)
+                        </p>
+                            
+                        <p>
+                            <strong> @Html.DisplayNameFor(model => model.WonAward)</strong>:@Html.DisplayFor(modelItem => item.WonAward)
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href="@Url.Action("Edit", "Movies", new { id = item.MovieID })">Edit</a> 
+                            <a class="btn btn-default" href="@Url.Action("Details", "Movies", new { id = item.MovieID })">Details</a>
+                            <a class="btn btn-default" href="@Url.Action("Delete", "Movies", new { id = item.MovieID })">Delete</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+</div>
+        }
+
+
+    </div>
+
+</div>
+
+
+<!--Initiate WOW js, can be at the bottom of your file -->
+<script>
+    wow = new WOW(
+        {
+            boxClass: 'wow',      // default
+            animateClass: 'animated', // change this if you are not using animate.css
+            offset: 0,          // default
+            mobile: true,       // keep it on mobile
+            live: true        // track if element updates
+        }
+    )
+    wow.init();
+</script>

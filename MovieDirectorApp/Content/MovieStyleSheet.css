@@ -1,0 +1,14 @@
+﻿.bg {
+    /*background-image: url('Images/pexels-photo-157543.jpeg');*/
+    background-image: url('Images/movie-theater-article.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.caption{
+    background-color:brown!important;
+}
+
+.col-md-12 a.btn.btn-default{
+    background-color:lightcoral !important;
+}

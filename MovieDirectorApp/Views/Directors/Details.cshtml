@@ -1,0 +1,39 @@
+﻿@model MovieDirectorApp.Models.Director
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="jumbotron"></div>
+<div class="animated rotateInDownLeft">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+
+                <div class="caption">
+                    <p><strong>@Html.DisplayNameFor(model => model.Name)</strong> : @Html.DisplayFor(model => model.Name)</p>
+                   
+
+
+
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.DirectorID }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+   

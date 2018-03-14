@@ -1,0 +1,34 @@
+﻿<link href="~/Content/MovieStyleSheet.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+</script>
+
+@model MovieDirectorApp.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron"></div>
+<div class="animated rotateInDownLeft">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+
+            <div class="caption">
+                <p><strong>@Html.DisplayNameFor(model => model.Director.Name)</strong> : @Html.DisplayFor(model => model.Director.Name)</p>
+                <p><strong> @Html.DisplayNameFor(model => model.Genre.Type)</strong> :  @Html.DisplayFor(model => model.Genre.Type)</p>
+                <p><strong> @Html.DisplayNameFor(model => model.Title)</strong> : @Html.DisplayFor(model => model.Title)</p>
+                <p><strong> @Html.DisplayNameFor(model => model.RealeaseDate)</strong> : @Html.DisplayFor(model => model.RealeaseDate)</p>
+                <p><strong>   @Html.DisplayNameFor(model => model.RTScore)</strong> :   @Html.DisplayFor(model => model.RTScore)</p>
+                <p><strong>   @Html.DisplayNameFor(model => model.Rating)</strong> :   @Html.DisplayFor(model => model.Rating)</p>
+                <p><strong>   @Html.DisplayNameFor(model => model.WonAward)</strong> :   @Html.DisplayFor(model => model.WonAward)</p>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>

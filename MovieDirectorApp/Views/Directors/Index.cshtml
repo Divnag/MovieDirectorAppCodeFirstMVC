@@ -1,0 +1,59 @@
+﻿<link href="~/Content/DirectorStyleSheet.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+</script>
+@model IEnumerable<MovieDirectorApp.Models.Director>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="animated rollIn">
+    <div class="bg">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-4">
+                <p>
+                    <a class="btn btn-default" href=@Url.Action("Create", "Directors")>Create New </a>
+                </p>
+            </div>
+        </div>
+
+        <div class=" row">
+            <div class="col-sm-6 col-md-4">
+                <h2>
+
+                    @Html.DisplayNameFor(model => model.Name)
+
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+
+          
+                @foreach (var item in Model)
+                {
+
+            <div class="col-sm-6 col-md-4">
+                <div class="animated flip">
+                <div class=" thumbnail">
+                    <div class="caption">
+
+                        <h2>  @Html.DisplayFor(modelItem => item.Name)</h2>
+
+
+                        <p>
+                            <a class="btn btn-default" href=" @Url.Action("Edit", "Directors", new { id = item.DirectorID })">Edit </a>
+                          @*  <div class="animated rollOut">  <a class="btn btn-default" @Html.ActionLink("Details", "Details", new { id = item.DirectorID })></a></div>*@
+                            <a class="btn btn-default" href=" @Url.Action("Delete", "Directors", new { id = item.DirectorID })">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                </div>
+       
+}
+
+            </div>
+        </div>
+    </div>
